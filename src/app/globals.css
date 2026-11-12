@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* White & Clean E-commerce Palette with Warm Wood Undertones */
+  --c-bg:              #FFFFFF;
+  --c-bg-subtle:       #FAF6F0;       /* warm porcelain with soft wood warmth */
+  --c-bg-muted:        #F2EAE1;       /* soft wood cream */
+  --c-surface:         #FFFFFF;
+  --c-surface-card:    #FFFFFF;
+  --c-border:          #E2D6C8;       /* soft warm wood border */
+  --c-border-subtle:   #EFE7DE;
+
+  /* Rich Wood Brown Palette */
+  --c-espresso:        #1A100A;       /* deep dark wood */
+  --c-dark-brown:      #2D180F;       /* rich dark walnut */
+  --c-brown:           #4A2818;       /* classic timber brown */
+  --c-warm-brown:      #6E3C22;       /* warm cedar / chestnut */
+  --c-caramel:         #9E5E38;       /* warm caramel */
+  --c-wood-tint:       #F7EFE7;       /* very soft wood tint */
+  --c-wood-border:     #D8C2B0;       /* warm timber border */
+
+  /* Text Colors */
+  --c-text-main:       #1F140E;       /* crisp high contrast dark brown-black */
+  --c-text-muted:      #6E584B;       /* readable warm medium brown */
+  --c-text-light:      #8F796C;
+
+  /* Gold & Amber Accents */
+  --c-gold:            #B88E28;       /* readable rich gold */
+  --c-gold-dark:       #96721A;
+  --c-gold-light:      #D4AF37;
+  --c-gold-bg:         #FAF4E4;       /* soft gold tint */
+  --c-gold-border:     #E5CE94;
+
+  /* Status Colors */
+  --c-whatsapp:        #25D366;
+  --c-whatsapp-dark:   #1EBE5D;
+  --c-sale-red:        #DC2626;
+  --c-stock-green:     #16A34A;
+
+  /* Typography */
+  --font-serif:        'Cormorant Garamond', Georgia, serif;
+  --font-sans:         'Inter', system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--c-bg-subtle);
+  color: var(--c-text-main);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--c-bg-subtle);
+  color: var(--c-text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--c-espresso);
+  letter-spacing: -0.01em;
+}
+
+/* Background Grids & Patterns */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(110, 60, 34, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(110, 60, 34, 0.05) 1px, transparent 1px);
+}
+
+.bg-wood-radial {
+  background: radial-gradient(circle at 50% 10%, #FFFFFF 0%, #FAF4EB 100%);
+}
+
+/* Luxury Wood Button */
+.gold-btn {
+  background: linear-gradient(135deg, #3D2214 0%, #24140B 100%);
+  color: #FFFFFF;
+  font-weight: 600;
+  border: 1px solid #9E5E38;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(45, 24, 15, 0.2);
+}
+.gold-btn:hover {
+  background: linear-gradient(135deg, #6E3C22 0%, #4A2818 100%);
+  color: #FFFFFF;
+  border-color: #B88E28;
+  box-shadow: 0 6px 20px rgba(110, 60, 34, 0.25);
+  transform: translateY(-1px);
+}
+
+.wood-btn {
+  background: #FFFFFF;
+  color: #3D2214;
+  border: 1px solid #D8C2B0;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.wood-btn:hover {
+  background: #F7EFE7;
+  border-color: #6E3C22;
+  color: #6E3C22;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(110, 60, 34, 0.08);
+}
+
+/* Wood Pill Tag */
+.wood-pill {
+  background-color: #F7EFE7;
+  border: 1px solid #DEC5B1;
+  color: #5C321E;
+  font-weight: 600;
+}
+
+/* Gold/Wood Rule Divider */
+.gold-rule {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #8A4F2E, transparent);
+  margin: 1.25rem auto;
+  position: relative;
+}
+.gold-rule::after {
+  content: "♦";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #B88E28;
+  font-size: 9px;
+  background: var(--c-bg-subtle);
+  padding: 0 6px;
+}
+
+/* Clean White E-Commerce Card with subtle warm wood edge */
+.ecommerce-card {
+  background: #FFFFFF;
+  border: 1px solid #E2D6C8;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 4px rgba(45, 24, 15, 0.04);
+}
+.ecommerce-card:hover {
+  border-color: #8A4F2E;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(45, 24, 15, 0.1), 0 0 0 1px rgba(138, 79, 46, 0.15);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slide-in {
+  animation: slideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Clean Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F2EAE1;
+}
+::-webkit-scrollbar-thumb {
+  background: #9E5E38;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6E3C22;
+}
